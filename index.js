@@ -21,5 +21,3 @@ app.use(errorHandler);
 app.listen(port, () => {
   console.log(`SMS listening on port ${port}`);
 });
-
-module.exports = app;
