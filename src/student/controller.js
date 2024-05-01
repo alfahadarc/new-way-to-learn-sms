@@ -5,7 +5,6 @@ import { getAll, saveStudent, getById } from "./repository.js";
 export async function getAllStudent(req, res, next) {
     try {
         const student = await getAll();
-        console.log(student)
         res.status(200).json(student);
     } catch(err) {
         next(err)

@@ -6,7 +6,6 @@ import { getById } from "../student/repository.js";
 export async function getAllInvoice(req, res, next) {
     try {
         const invoice = await getAll();
-        console.log(invoice)
         res.status(200).json(invoice);
     } catch(err) {
         next(err)
@@ -17,7 +16,6 @@ export async function getAllInvoice(req, res, next) {
 
 export async function addInvoice(req, res, next) {
     const student_id = req.params.studentId;
-    console.log(student_id)
 
     const student = await getById(student_id);
 
