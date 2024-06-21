@@ -3,9 +3,9 @@ import { supabase } from "../config/database.js"
 
 export async function getAll() {
     try {
-        const { data, error } = await supabase
-            .from('invoice')
-            .select('*');
+      const { data, error } = await supabase
+      .from('invoice')
+      .select('*, student(id,name,mobile)')
 
         if (error) {
             throw error;

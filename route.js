@@ -2,6 +2,7 @@ import express from "express";
 import authRouter from "./src/auth/route.js";
 import studentRouter from "./src/student/route.js";
 import invoiceRouter from "./src/invoice/route.js";
+import moduleRouter from "./src/module/route.js";
 
 
 
@@ -14,7 +15,8 @@ router.use("/auth", authRouter);
 
 
 router.use("/student",authorize(), studentRouter);
-router.use("/invoice",authorize(), invoiceRouter)
+router.use("/invoice",authorize(), invoiceRouter);
+router.use("/module",authorize(), moduleRouter);
 
 
 export default router;

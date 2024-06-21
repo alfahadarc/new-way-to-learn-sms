@@ -1,6 +1,6 @@
 import express from 'express'
 const studentRouter = express.Router();
- import {  getAllStudent, addStudent } from './controller.js';
+ import {  getAllStudent, addStudent, addOnGoingModule, addToCompleteList,getModuleInfo } from './controller.js';
 import validate from "../config/validation.js"
 import {body} from 'express-validator'
 
@@ -15,7 +15,13 @@ studentRouter.post("/", validate([
     body('dob').notEmpty(),
     body('mobile').isNumeric().notEmpty(),
     body('address').notEmpty(),
+    body('grade').notEmpty(),
 ]), addStudent)
+
+studentRouter.get("/addOngoing/:id/:module_id", addOnGoingModule)
+studentRouter.get("/addToCompleteList/:id", addToCompleteList)
+studentRouter.get("/moduleInfo/:id", getModuleInfo)
+
 
 
 export default studentRouter;

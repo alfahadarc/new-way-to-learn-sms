@@ -5,6 +5,7 @@ import { getById } from "../student/repository.js";
 
 export async function getAllInvoice(req, res, next) {
     try {
+        console.log("invoice")
         const invoice = await getAll();
         res.status(200).json(invoice);
     } catch(err) {
